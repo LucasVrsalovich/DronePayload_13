@@ -1,23 +1,23 @@
 # DronePayload_13 TASK LIST
 EPP MathWorks Project Repo
 ## Week 1
-[x] Review Project Desc. /DONE
-[x] Completing Agreement Form /DONE
-[x] Breaking Down Problems - Beginning work on MATLAB /DONE
-[x] Early Drone Sketches ( By July 15 ) /DONE
+- [x] Review Project Desc. /DONE
+- [x] Completing Agreement Form /DONE
+- [x] Breaking Down Problems - Beginning work on MATLAB /DONE
+- [x] Early Drone Sketches ( By July 15 ) /DONE
 ## Week 2
-[x] Drone Sketches Final Vers. /DONE
-[x] Choosing two designs and/or finalizing combo. of designs /DONE
-[x] Continue work on Tasks 2 and 3 /DONE
+- [x] Drone Sketches Final Vers. /DONE
+- [x] Choosing two designs and/or finalizing combo. of designs /DONE
+- [x] Continue work on Tasks 2 and 3 /DONE
 ## Week 3
-[x] Finish Task 2 and close out on code for Task 3 /DONE
-[x] Finish both models for our drone(s) and their arms. /DONE
+- [x] Finish Task 2 and close out on code for Task 3 /DONE
+- [x] Finish both models for our drone(s) and their arms. /DONE
 ## Week 4
-[x] Finalize exact measurements without CAD designs /DONE
-[x] Fully finish Task 3 and begin working on Task 4 Dimensional Analysis /DONE
+- [x] Finalize exact measurements without CAD designs /DONE
+- [x] Fully finish Task 3 and begin working on Task 4 Dimensional Analysis /DONE
 ## Week 5
-[x] Complete Dimensional Analysis /DONE
-[x] Complete final thoughts within the MAT file ( questions at the bottom of the file ) /DONE
-[] Work towards compiling all files and preparing for submission /IN PROGRESS
-[] SUBMIT! /NOT YET STARTED
+- [x] Complete Dimensional Analysis /DONE
+- [x] Complete final thoughts within the MAT file ( questions at the bottom of the file ) /DONE
+- [] Work towards compiling all files and preparing for submission /IN PROGRESS
+- [] SUBMIT! /NOT YET STARTED
             
