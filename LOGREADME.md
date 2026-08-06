@@ -1,7 +1,5 @@
-# DronePayload_13
+          # DronePayload_13
 EPP MathWorks Project Repo
-
-          ## Hello
 
 TASK LIST / 
            Week 1
