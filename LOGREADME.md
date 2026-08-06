@@ -16,7 +16,7 @@ EPP MathWorks Project Repo
 - [x] Finalize exact measurements without CAD designs 
 - [x] Fully finish Task 3 and begin working on Task 4 Dimensional Analysis 
 ## Week 5
-- [x] Complete Dimensional Analysis /DONE
+- [x] Complete Dimensional Analysis
 - [x] Complete final thoughts within the MAT file ( questions at the bottom of the file ) 
 - [] Work towards compiling all files and preparing for submission 
 - [] SUBMIT!
