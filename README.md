@@ -2,7 +2,7 @@
 
 ## Objective
 
-This project evaluates drone arm designs to determine maximum payload capacity while ensuring structural integrity under operational loads. We analyze two primary arm geometries across six material choices (carbon fiber composite, aluminum alloy, fiberglass, PLA, ABS, and wood) for a total of 12 design combinations.
+This project evaluates drone arm designs to determine maximum payload capacity while ensuring structural integrity under operational loads. After designing various designs, we analyze two primary arm geometries across six material choices (carbon fiber composite, aluminum alloy, fiberglass, PLA, ABS, and wood).
 
 Using MATLAB, we perform:
 
