@@ -9,7 +9,7 @@ Using MATLAB, we perform:
 - Thrust-to-Weight Analysis: Calculating maximum payload capacity for each combination.
 - Finite Element Analysis (FEA): Modeling displacement, von Mises stress, and safety factors under load.
 
-Based on these results, we will determine a final recommended design and material combination that satisfies both the minimum payload requirement (0.5 kg) and the structural safety margin (factor of safety of 1.5-2+).
+Based on these results, we will determine a final recommended design and material combination that satisfies both the minimum payload requirement (0.5 kg) and the structural safety margin (factor of safety of 1.5 to 2+).
 
 ## Project Files
 
@@ -20,20 +20,20 @@ Based on these results, we will determine a final recommended design and materia
 
 ## Requirements
 
-You'll need **MATLAB (R2021a or newer)** and the **Partial Differential Equation Toolbox**. 
+**MATLAB (R2021a or newer)** and the **Partial Differential Equation Toolbox**. 
 
-## How to Run It
+## Running the Script & Reproducing our Results
 
-1. Download/clone everything into a single folder so file paths don't break.
-2. Open `DroneDesign_StudentProjectTemplate.mlx`.
-3. Run the script sections top-to-bottom:
-   - **Task 1 (Setup):** Loads material properties and geometry defaults. Run this first or the variables won't be in your workspace.
-   - **Task 3 (Thrust-to-Weight):** Calculates payload capacity across the 12 combinations and builds the comparison bar chart + `resultsT3` table.
-   - **Task 4 (FEA):** Pulls in the CAD geometries, sets up boundary conditions, and solves for stress/displacement. Generates the `resultsT4` table along with stress plots.
+1. Copy or download this repository. Make sure all `.mlx`, `.mat`, and `.stl` files stay in the same folder. 
+2. Open `DroneDesign_StudentProjectTemplate.mlx` in MATLAB.
+3. Run the script sections sequentially:
+   - **Task 1 (Setup):** will load material properties and set up the drone/arm parameters. (Must be run first to initialize variables like `materials`, `designs`, and `baseMass`.
+   - **Task 3 (Thrust-to-Weight Analysis):** Calculates maximum payload capacities across all 12 design/material combinations, outputting the `resultsT3` summary table and comparison bar chart.
+   - **Task 4 (Finite Element Analysis):** will import CAD geometry, apply boundary loads, and solve for structural performance. This will generate the `resultsT4` table along with stress and displacement figures.
+ 
+*Note:* Task 4 opens individual figure windows for each combination, so expect a few dozen plot windows to open while it solves. Helper functions (`computeArmVolume`, `runFEA`, etc.) are located at the bottom of the Live Script.
 
-*Note:* Task 4 generates individual plots for every scenario, so don't be surprised when a ton of figure windows pop open. Local helper functions are tucked at the bottom of the script.
+## Setup Details
 
-## Setup Notes
-
-- **Boundary Conditions:** The script uses `identifyBaseTipFaces` to auto-detect base and tip faces from geometry rather than hardcoded IDs, so FEA loads apply cleanly across different MATLAB versions.
-- **CAD Scale:** STL files assume millimeter exports (`cadUnitScale = 1e-3`). If your CAD geometry was saved in meters or inches, change `cadUnitScale` in Task 1.
+- **Boundary Conditions:** Base and tip faces are detected automatically using geometry algorithms (`identifyBaseTipFaces`) rather than hardcoded face IDs, keeping FEA boundary conditions consistent across different MATLAB sessions.
+- **CAD Scale:** STL files are assumed to be exported in millimeters (`cadUnitScale = 1e-3`). If your CAD files use a different unit, adjust `cadUnitScale` in the Task 1 design struct.
