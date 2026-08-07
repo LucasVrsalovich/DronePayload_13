@@ -13,31 +13,27 @@ Based on these results, we will determine a final recommended design and materia
 
 ## Project Files
 
-- `DroneDesign_StudentProjectTemplate.mlx` - Main MATLAB Live Script containing the analysis, FEA pipeline, and final recommendations.
-- `DroneDesign_StudentProjectTemplate.pdf` - PDF export of the completed Live Script for quick viewing without MATLAB.
-- `droneArmMaterials.mat` - Material properties (density, Young's modulus, Poisson's ratio, yield strength, cost/m) for all six candidate materials.
-- `DRONE_ARM.STL` - CAD geometry for Design 1.
-- `DRONE_ARM2_SLDPRT.STL` - CAD geometry for Design 2.
+- `DroneDesign_StudentProjectTemplate.mlx` – Main Live Script (handles the math, FEA pipeline, and final design pick).
+- `DroneDesign_StudentProjectTemplate.pdf` – Exported PDF if you just want to view results without opening MATLAB.
+- `droneArmMaterials.mat` – Material constants (density, Modulus, Poisson's ratio, yield strength, cost) for all 6 materials.
+- `DRONE_ARM.STL` & `DRONE_ARM2_SLDPRT.STL` – CAD files for Arm Design 1 and Design 2.
 
 ## Requirements
 
-- MATLAB (R2021a or newer recommended)
-- **Partial Differential Equation Toolbox** (required for Task 4 FEA functions)
+You'll need **MATLAB (R2021a or newer)** and the **Partial Differential Equation Toolbox**. 
 
-To verify the toolbox is installed, run `ver` in the Command Window and check for *Partial Differential Equation Toolbox*. If it's missing, install it via **Home > Add-Ons > Get Add-Ons**.
+## How to Run It
 
-## Running the Script & Reproducing Results
+1. Download/clone everything into a single folder so file paths don't break.
+2. Open `DroneDesign_StudentProjectTemplate.mlx`.
+3. Run the script sections top-to-bottom:
+   - **Task 1 (Setup):** Loads material properties and geometry defaults. Run this first or the variables won't be in your workspace.
+   - **Task 3 (Thrust-to-Weight):** Calculates payload capacity across the 12 combinations and builds the comparison bar chart + `resultsT3` table.
+   - **Task 4 (FEA):** Pulls in the CAD geometries, sets up boundary conditions, and solves for stress/displacement. Generates the `resultsT4` table along with stress plots.
 
-1. Clone or download this repository. Ensure all `.mlx`, `.mat`, and `.stl` files stay in the same working directory (or update file paths inside the script).
-2. Open `DroneDesign_StudentProjectTemplate.mlx` in MATLAB.
-3. Run the script sections sequentially:
-   - **Task 1 (Setup):** Loads material properties and sets up the drone/arm parameters. (Must be run first to initialize workspace variables like `materials`, `designs`, and `baseMass`).
-   - **Task 3 (Thrust-to-Weight Analysis):** Calculates maximum payload capacities across all 12 design/material combinations, outputting the `resultsT3` summary table and comparison bar chart.
-   - **Task 4 (Finite Element Analysis):** Imports CAD geometry, applies boundary loads, and solves for structural performance. Generates the `resultsT4` table along with stress and displacement figures.
+*Note:* Task 4 generates individual plots for every scenario, so don't be surprised when a ton of figure windows pop open. Local helper functions are tucked at the bottom of the script.
 
-*Note:* Task 4 opens individual figure windows for each combination, so expect a few dozen plot windows to open while it solves. Helper functions (`computeArmVolume`, `runFEA`, etc.) are located at the bottom of the Live Script.
+## Setup Notes
 
-## Setup Details
-
-- **Boundary Conditions:** Base and tip faces are detected automatically using geometry algorithms (`identifyBaseTipFaces`) rather than hardcoded face IDs, keeping FEA boundary conditions consistent across different MATLAB sessions.
-- **CAD Scale:** STL files are assumed to be exported in millimeters (`cadUnitScale = 1e-3`). If your CAD files use a different unit, adjust `cadUnitScale` in the Task 1 design struct.
+- **Boundary Conditions:** The script uses `identifyBaseTipFaces` to auto-detect base and tip faces from geometry rather than hardcoded IDs, so FEA loads apply cleanly across different MATLAB versions.
+- **CAD Scale:** STL files assume millimeter exports (`cadUnitScale = 1e-3`). If your CAD geometry was saved in meters or inches, change `cadUnitScale` in Task 1.
