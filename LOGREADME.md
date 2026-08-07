@@ -18,6 +18,6 @@ EPP MathWorks Project Repo
 ## Week 5
 - [x] Complete Dimensional Analysis
 - [x] Complete final thoughts within the MAT file ( questions at the bottom of the file ) 
-- [] Work towards compiling all files and preparing for submission 
-- [] SUBMIT!
+- [x] Work towards compiling all files and preparing for submission 
+- [x] SUBMIT!
             
